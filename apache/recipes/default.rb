@@ -62,7 +62,8 @@ service "httpd" do
 end
 
 
-execute '' do
+execute 'checking curl' do
+  cmd  "#{document_root}"
   user 'root'
   command "curl --data index.html -X POST /session"
   action :run
